@@ -11,11 +11,6 @@ public class Main{
         char c;
         JButton[] second = new JButton[26];
 
-        for (c = 'a', c <='Z', ++c){
-            int i;
-          second[i] = System.out.println(c);
-      }
-
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setLocation(500,500);

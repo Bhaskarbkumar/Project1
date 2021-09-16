@@ -15,10 +15,11 @@ import java.awt.BorderLayout;
 public class MenuScreen{
     
     private JFrame  window;
-    private JTextField gameKeyField = new JTextField();
+    public JTextField gameKeyField = new JTextField();
     private JTextField guessField = new JTextField();
-    private JTextField display = new JTextField("press <NEW> to start");
+    private JTextField display = new JTextField("press <NEW> to start the game ");
     private JButton[] first = new JButton[26];
+    private JButton New = new JButton("New");
     private char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
 
@@ -33,6 +34,8 @@ public void init() {
        northpanel.setLayout(new GridLayout(2,1));
        northpanel.add(new JTextField());
        northpanel.add(gameKeyField);
+       gameKeyField.setEnabled(false);
+       guessField.setEnabled(false);
 
 
        cp.add(BorderLayout.NORTH,northpanel);
@@ -47,10 +50,21 @@ public void init() {
       southPanel.setLayout(new GridLayout(4,7));
       for (int i=0;i<26;i++) {
            
-            first[i]=new JButton("a"); 
-            southPanel.add(first[i],BorderLayout.SOUTH);
-    }
-    cp.add(BorderLayout.SOUTH,southPanel);
+        first[i]=new JButton("a"); 
+        first[i].setEnabled(false);
+        southPanel.add(first[i],BorderLayout.SOUTH);
+}
+      
+      southPanel.add(New);
+      cp.add(BorderLayout.SOUTH,southPanel);
+    
+      New.addActionListener(event -> {
+          window.getContentPane().removeAll();
+          var panel1 = new HangmanGamePanel(window);
+          panel1.init();
+          window.pack();
+          window.setVisible(true);
+      });
 
 }
 

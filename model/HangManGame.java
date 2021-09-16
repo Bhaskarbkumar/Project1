@@ -1,13 +1,25 @@
 package model;
 
+import java.util.Random;
+
+import java.util.ArrayList;
 import java.util.ArrayList;
 
 public class HangManGame {
 
+    private int key;
+    private int[] guess = new int[26];
+    public static ArrayList<String> wordPool = new ArrayList<>();
+
+    public void generateKey() {
+        Random r = new Random();
+        key =r.nextInt(26);
+    }
+
     public static void main(String[] args) {
 
 
-    ArrayList<String> wordPool = new ArrayList<>();
+    
     wordPool.add("communication");
     wordPool.add("science");
     wordPool.add("programming");
