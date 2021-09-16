@@ -66,5 +66,10 @@ public class HangManGame {
 		return key;
 	}
 
+    public void setGuess(int pos, int i) {
+        assert 0 <= pos && pos < random.length() : "out of range";
+    
+    }
+
 }
 
