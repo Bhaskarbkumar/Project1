@@ -33,15 +33,10 @@ public class HangmanKeyListener implements ActionListener {
 
         }
         panel.getCanvas().repaint();
-    } else {
-        JTextField guessField = panel.getGuessKeyField();
-        if(clicks==0) guessField.setText("");
-
-        Hn
-        }
+    } 
+        
         
         
         
     }
 
-}

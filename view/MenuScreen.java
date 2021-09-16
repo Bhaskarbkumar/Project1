@@ -19,7 +19,7 @@ public class MenuScreen{
     public JTextField gameKeyField = new JTextField();
     private JTextField guessField = new JTextField();
     private JTextField display = new JTextField("press <NEW> to start the game ");
-    private JButton[] first = new JButton[26];
+    private JButton[] first = new JButton[26] ;
     private JButton New = new JButton("New");
     private char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
@@ -50,10 +50,9 @@ public void init() {
       JPanel southPanel = new JPanel();
       southPanel.setLayout(new GridLayout(4,7));
 
-
       for (int i=0;i<26;i++) {
            
-        first[i]=new JButton("a"); 
+        first[i]=new JButton(Character.toString(letters[i])); 
         first[i].setEnabled(false);
         southPanel.add(first[i],BorderLayout.SOUTH);
 }

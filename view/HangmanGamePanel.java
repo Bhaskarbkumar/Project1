@@ -29,6 +29,7 @@ public class HangmanGamePanel {
     private JButton[] letterButtons = new JButton[26];
     private JButton gameClick = new JButton("New");
     private GameState gameState = GameState.READY;
+    private  char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
     private HangManGame HangMan;
 
@@ -50,6 +51,8 @@ public class HangmanGamePanel {
   
         canvas =  new HangmanCanvas(this);
         cp.add(BorderLayout.CENTER, canvas);
+
+       
         
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new GridLayout(4,7));
@@ -58,7 +61,7 @@ public class HangmanGamePanel {
 
         for (int i=0;i<26;i++) {
            
-            letterButtons[i]=new JButton("a"); 
+            letterButtons[i]=new JButton(Character.toString(letters[i])); 
             letterButtons[i].setEnabled(true);
             southPanel.add(letterButtons[i],BorderLayout.SOUTH);
             letterButtons[i].addActionListener(keyListener);
