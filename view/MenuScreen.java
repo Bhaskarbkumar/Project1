@@ -1,5 +1,6 @@
 package view;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -48,6 +49,8 @@ public void init() {
 
       JPanel southPanel = new JPanel();
       southPanel.setLayout(new GridLayout(4,7));
+
+
       for (int i=0;i<26;i++) {
            
         first[i]=new JButton("a"); 
