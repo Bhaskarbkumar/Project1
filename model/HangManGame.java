@@ -72,6 +72,7 @@ public class HangManGame {
     }
     
     public void computeHealthCount() {
+                  
        }
     }
 
