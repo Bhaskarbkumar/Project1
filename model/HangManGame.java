@@ -12,6 +12,7 @@ public class HangManGame {
     private int key ;
     private int guess;
     private String random ;
+    private int healthCount;
     public ArrayList<String> wordPool = new ArrayList<>(32);
     private ArrayList<String> wordGuess = new ArrayList<>(33);
 
@@ -67,9 +68,10 @@ public class HangManGame {
 	}
 
     public void setGuess(int pos, int i) {
-        assert 0 <= pos && pos < random.length() : "out of range";
     
     }
-
-}
+    
+    public void computeHealthCount() {
+       }
+    }
 

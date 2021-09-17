@@ -45,8 +45,9 @@ public class HangmanKeyListener implements ActionListener {
 
             HangManGame hangman = panel.getHangMan();
             String n = button.getText();
-     
-            guessField.setText(guessField.getText() + n); 
+ 
+            guessField.setText(guessField.getText() + n);
+            hangman.setGuess(clicks,n.charAt(0) - '0');
             clicks++;
             
         }   if (clicks == random.length() ) {
@@ -55,7 +56,10 @@ public class HangmanKeyListener implements ActionListener {
 
             }
         }
-    } 
+    }
+
+
+    
         
         
         

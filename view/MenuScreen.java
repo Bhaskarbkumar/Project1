@@ -11,11 +11,13 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.awt.BorderLayout;
+import java.awt.Component;
 
 
 public class MenuScreen{
     
     private JFrame  window;
+    private MenuScreenCanvas canvas;
     public JTextField gameKeyField = new JTextField();
     private JTextField guessField = new JTextField();
     private JTextField display = new JTextField("press <NEW> to start the game ");
@@ -33,19 +35,16 @@ public void init() {
 
        JPanel northpanel =new JPanel();
        northpanel.setLayout(new GridLayout(2,1));
-       northpanel.add(new JTextField());
        northpanel.add(gameKeyField);
        gameKeyField.setEnabled(false);
+       northpanel.add(guessField);
        guessField.setEnabled(false);
 
 
        cp.add(BorderLayout.NORTH,northpanel);
 
-       JPanel centrePanel = new JPanel();
-       centrePanel.setPreferredSize(new Dimension(500,500));
-       centrePanel.add(display);
-
-       cp.add(BorderLayout.CENTER,centrePanel);
+        canvas = new MenuScreenCanvas(this);
+        cp.add(BorderLayout.CENTER, canvas);
 
       JPanel southPanel = new JPanel();
       southPanel.setLayout(new GridLayout(4,7));
